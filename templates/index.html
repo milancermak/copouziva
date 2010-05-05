@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul id="interviews">
+    {% for p in people %}
+    <li>
+	<a class="interview" title="{{ p.name }} o tom, čo používa k práci i zábave." href="/{{ p.url }}/">
+	    <img class="thumbnail" width="500" height="100" src="{{ p.image_thumb.url }}" alt="{{ p.name }}"/>
+	    {{ p.name }}
+	</a>
+	<br />
+	<span class="summary">{{ p.occupation }}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

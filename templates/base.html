@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+	<title>{% block title %}Čo používa?{% endblock %}</title>
+	<link type="text/css" rel="stylesheet" media="screen" href="/static/style/screen.css" />
+	<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="/static/style/mobile.css" />
+    </head>
+
+    <body>
+	<header>
+	    <h1><a href="/" title="Kto čo používa?">Čo používa?</a></h1>
+	</header>
+	<navigation>
+	    <ul>
+		<li>
+		    <a title="Všeobecné informácie o projekte" href="/about/">O projekte</a>
+		</li>
+		<li>
+		    <a title="Ako nás kontaktovať" href="/contact/">Kontakt</a>
+		</li>
+	    </ul>
+	</navigation>
+
+	<section id="contents">
+	    {% block content %}
+	    {% endblock %}
+	</section>
+
+	<footer>
+	    {% block footer %}
+	    Rozhovory sú publikované pod <a title="A Creative Commons license" href="http://creativecommons.org/licenses/by-sa/2.5/au/">Attribution-Share Alike</a> licenciou. Sledujte nás <a href="http://twitter.com/copouziva" title="Oficiálny Twitter kanál pre projekt">na Twitteri</a>.
+	    {% endblock %}
+	</footer>
+	{% include 'ga.html' %}
+    </body>
+</html>

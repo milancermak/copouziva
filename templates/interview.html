@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Čo používa {{ person.name }}{% endblock %}
+
+{% block content %}
+<article class="overview">
+    <img class="portrait" width="500" height="335" src="{{ person.image_full.url }}" alt="{{ person.name }}" />
+    <h2 class="person">{{ person.name }}</h2>
+    <p class="summary">{{ person.occupation }}</p>
+    
+    <time datetime="{{ person.date_published|date:"Y-m-d" }}">Publikované {{ person.date_published|date:"d. m. Y" }}</time>
+</article>
+
+<article class="contents">
+    <h3>Kto si a čomu sa venuješ?</h3>
+    {{ person.a1|safe }}
+
+    <h3>Aký hardware používaš?</h3>
+    {{ person.a2|safe }}
+
+    <h3>A aký software?</h3>
+    {{ person.a3|safe }}
+
+    <h3>Ako by vypadala tvoja konfigurácia snov?</h3>
+    {{ person.a4|safe }}
+</article>
+{% endblock %}

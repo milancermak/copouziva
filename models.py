@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from settings import MEDIA_ROOT
-import os
-
 
 # not the smartes way to do it, but it's easy to understand
 # and it was developed fast - works for me
@@ -12,10 +9,8 @@ class Person(models.Model):
     occupation = models.CharField(max_length=512)
     date_published = models.DateField(blank=True, null=True)
     published = models.BooleanField(default=False)
-    image_thumb = models.ImageField(upload_to=os.path.join(MEDIA_ROOT, 'images', 'thumbnails'),
-                                    help_text="500x100 px")
-    image_full = models.ImageField(upload_to=os.path.join(MEDIA_ROOT, 'images', 'portraits'),
-                                   help_text="500x335 px")
+    image_thumb = models.ImageField(upload_to='images/thumbnails', help_text="500x100 px")
+    image_full = models.ImageField(upload_to='images/portraits', help_text="500x335 px")
     # HTML formatted answers
     a1 = models.TextField()
     a2 = models.TextField()

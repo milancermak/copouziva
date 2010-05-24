@@ -12,7 +12,7 @@ class RSSLatestInterviews(feeds.Feed):
     description = 'Nové rozhovory na Čo používa.'
 
     def items(self):
-        return Person.objects.all()[:7] # last seven
+        return Person.objects.filter(published=True)[:7] # last seven
 
     def item_link(self, item):
         return '/'+item.url+'/'

@@ -25,6 +25,9 @@
     {{ person.a4|safe }}
 </article>
 <br />
+<!-- Facebook like button -->
 <iframe src="http://www.facebook.com/plugins/like.php?href=http%253A%252F%252Fcopouziva.cz%252F{{ person.url }}&amp;layout=standard&amp;show_faces=false&amp;width=500&amp;action=like&amp;font=lucida%2Bgrande&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:35px;" allowTransparency="true"></iframe>
+<!-- Tweet this button -->
+<a href="http://twitter.com/share" class="twitter-share-button" data-text="{{ person.name }}" data-count="horizontal" data-via="copouziva">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
 {% endblock %}
